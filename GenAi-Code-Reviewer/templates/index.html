@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GenAI Code Reviewer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+
+    <div>
+        <h1>GenAI Code Reviewer</h1>
+        <p>Intelligent code analysis powered by Generative AI</p>
+    </div>
+
+    <div class="badge">
+        IBM Granite
+    </div>
+
+</header>
+
+
+<main class="workspace">
+
+    <!-- LEFT SIDE - CODE EDITOR -->
+
+    <section class="panel">
+
+        <div class="panel-title">
+            <h2>Code Editor</h2>
+        </div>
+
+
+        <div class="language-section">
+
+            <label for="language">
+                Programming Language
+            </label>
+
+            <select id="language">
+
+                <option value="Java">Java</option>
+                <option value="Python">Python</option>
+                <option value="C">C</option>
+                <option value="C++">C++</option>
+                <option value="JavaScript">JavaScript</option>
+
+            </select>
+
+        </div>
+
+
+        <!-- CODE WRITING AREA -->
+
+        <textarea
+            id="code"
+            spellcheck="false"
+            placeholder="Write or paste your code here..."></textarea>
+
+
+        <button id="reviewButton" onclick="reviewCode()">
+            Review Code
+        </button>
+
+
+        <button id="clearButton" onclick="clearCode()">
+            Clear Code
+        </button>
+
+    </section>
+
+
+
+    <!-- RIGHT SIDE - AI REVIEW -->
+
+    <section class="panel">
+
+        <div class="panel-title">
+            <h2>AI Code Review</h2>
+        </div>
+
+
+        <div id="status" class="status">
+            Ready for analysis
+        </div>
+
+
+        <div id="result" class="result">
+            Enter your code and click "Review Code" to start the AI analysis.
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    GenAI Code Reviewer | Powered by IBM watsonx.ai
+</footer>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
